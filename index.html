@@ -6,8 +6,9 @@
 <meta name="author" content="MG">
 <meta name="copyright" content="© MG. All Rights Reserved.">
 <meta name="brand" content="MG · Legendarious">
-<meta name="description" content="MG × Tiger Beats — Legendarious Engine V3. Auto music editor.">
-<title>MG × Tiger Beats — Legendarious Engine V3</title>
+<meta name="description" content="MG × Tiger Beats — Legendarious Engine V3.2 Final. Auto music editor.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob: https:; connect-src 'self' https: blob:; object-src 'none'; base-uri 'self'">
+<title>MG × Tiger Beats — Legendarious Engine V3.2 Final</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
@@ -38,7 +39,7 @@ body::before{content:'';position:fixed;inset:0;background:var(--tiger-aurora);po
 #nova.go{opacity:1}
 
 #app{position:relative;z-index:5;height:100vh;height:100dvh;display:flex;flex-direction:column;gap:10px;padding:12px 14px 10px}
-.glass{position:relative;background:var(--glass-bg);backdrop-filter:blur(28px) saturate(160%);-webkit-backdrop-filter:blur(28px) saturate(160%);
+.glass{position:relative;background:var(--glass-bg);backdrop-filter:blur(24px) saturate(150%);-webkit-backdrop-filter:blur(24px) saturate(150%);
   border:1px solid var(--glass-stroke);border-radius:var(--r);box-shadow:0 10px 40px rgba(0,0,0,0.65),inset 0 1px 0 rgba(255,255,255,0.06);
   overflow:hidden;transition:border-color 0.2s ease,box-shadow 0.2s ease}
 .glass::after{content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;
@@ -60,7 +61,6 @@ select{background:rgba(12,14,18,0.9);color:var(--gold-polish);border:1px solid v
   transition:border-color 0.2s ease,box-shadow 0.2s ease}
 select:hover{border-color:var(--gold-polish)}
 select:focus-visible{box-shadow:0 0 0 2px var(--gold-glow)}
-optgroup{color:#8E8E98;background:#0E1014}
 
 button{position:relative;overflow:hidden;font-family:'Inter',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.08em;
   color:var(--silver-light);background:rgba(255,255,255,0.04);border:1px solid rgba(192,192,192,0.22);border-radius:8px;
@@ -69,9 +69,8 @@ button{position:relative;overflow:hidden;font-family:'Inter',sans-serif;font-wei
 button:hover:not(:disabled){border-color:var(--gold-polish);color:var(--gold-polish);box-shadow:0 0 16px rgba(255,215,0,0.25);background:rgba(255,215,0,0.05)}
 button:active:not(:disabled){transform:scale(0.96)}
 button:disabled{opacity:0.32;cursor:not-allowed}
-button:focus-visible{outline:2px solid var(--gold-glow);outline-offset:2px}
 button.primary{background:var(--gold-silk);color:#090A0C;border:1px solid transparent;font-weight:700;box-shadow:0 0 20px rgba(255,215,0,0.35)}
-button.primary:hover:not(:disabled){color:#000;box-shadow:0 0 32px rgba(255,215,0,0.65);background:var(--gold-silk)}
+button.primary:hover:not(:disabled){color:#000;box-shadow:0 0 32px rgba(255,215,0,0.65)}
 button.icon{padding:8px 11px;min-width:36px;font-size:13px}
 button.on{border-color:var(--plasma);color:var(--plasma);box-shadow:0 0 16px rgba(125,249,255,0.35);background:rgba(125,249,255,0.06)}
 .ripple{position:absolute;border-radius:50%;transform:scale(0);pointer-events:none;
@@ -91,9 +90,7 @@ button.on{border-color:var(--plasma);color:var(--plasma);box-shadow:0 0 16px rgb
 #dropHint:hover b{filter:brightness(1.3);text-shadow:0 0 24px rgba(255,215,0,0.6)}
 #dropHint span{pointer-events:none}
 #wavePanel.drag{border-color:var(--gold-polish);box-shadow:0 0 45px rgba(255,215,0,0.4)}
-#wavePanel.drag #dropHint b{filter:brightness(1.4)}
 
-/* URL loader bar */
 #urlBar{display:flex;gap:8px;padding:8px 14px;border-bottom:1px solid rgba(255,215,0,0.10);flex:0 0 auto}
 #urlInput{flex:1;background:rgba(9,10,12,0.85);color:var(--silver-light);border:1px solid var(--glass-stroke);
   border-radius:8px;padding:7px 12px;font-family:'JetBrains Mono',monospace;font-size:11px;outline:none;
@@ -187,7 +184,6 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:rgba(255,215,0,0.24);border-radius:3px}
-::-webkit-scrollbar-thumb:hover{background:rgba(255,215,0,0.4)}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
@@ -231,7 +227,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
     <line x1="76" y1="22" x2="82" y2="33" stroke="url(#gGold)" stroke-width="1.4" opacity=".5"/>
     <line x1="124" y1="22" x2="118" y2="33" stroke="url(#gGold)" stroke-width="1.4" opacity=".5"/>
   </svg>
-  <div id="splashTitle">LEGENDARIOUS ENGINE V3</div>
+  <div id="splashTitle">LEGENDARIOUS ENGINE V3.2</div>
   <div id="splashSub">© MG — TIGER BEATS · ALL RIGHTS RESERVED</div>
   <button id="splashCta" class="primary" style="padding:12px 34px;letter-spacing:.2em">ENTER</button>
 </div>
@@ -240,7 +236,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
 
   <header id="topbar" class="glass" role="banner">
     <div id="logoSocket" role="button" tabindex="0" aria-label="MG logo — click to trigger roar effect"></div>
-    <div class="brand">TIGER BEATS<small>LEGENDARIOUS ENGINE V3</small></div>
+    <div class="brand">TIGER BEATS<small>LEGENDARIOUS ENGINE V3.2</small></div>
     <div class="spacer"></div>
     <div class="ctl">
       <label class="sel">Seed
@@ -304,19 +300,19 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
       <div class="panelBody">
         <div class="stem" data-stem="vocals">
           <div class="stemTop"><span class="stemName"><i></i>Vocals</span><span class="stemVal mono" id="vVocals">0.0 dB</span></div>
-          <input type="range" id="fVocals" min="0" max="200" value="100" aria-label="Vocals level" role="slider">
+          <input type="range" id="fVocals" min="0" max="200" value="100" aria-label="Vocals level">
         </div>
         <div class="stem" data-stem="drums">
           <div class="stemTop"><span class="stemName"><i></i>Drums</span><span class="stemVal mono" id="vDrums">0.0 dB</span></div>
-          <input type="range" id="fDrums" min="0" max="200" value="100" aria-label="Drums level" role="slider">
+          <input type="range" id="fDrums" min="0" max="200" value="100" aria-label="Drums level">
         </div>
         <div class="stem" data-stem="bass">
           <div class="stemTop"><span class="stemName"><i></i>Bass</span><span class="stemVal mono" id="vBass">0.0 dB</span></div>
-          <input type="range" id="fBass" min="0" max="200" value="100" aria-label="Bass level" role="slider">
+          <input type="range" id="fBass" min="0" max="200" value="100" aria-label="Bass level">
         </div>
         <div class="stem" data-stem="other">
           <div class="stemTop"><span class="stemName"><i></i>Other</span><span class="stemVal mono" id="vOther">0.0 dB</span></div>
-          <input type="range" id="fOther" min="0" max="200" value="100" aria-label="Other level" role="slider">
+          <input type="range" id="fOther" min="0" max="200" value="100" aria-label="Other level">
         </div>
         <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,215,0,0.12)">
           <div class="meter">
@@ -325,7 +321,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
           </div>
           <div class="meter" style="margin-top:8px">
             <div class="meterLabel"><span>Vocal Tune</span><b id="tuneVal">0</b></div>
-            <input type="range" id="tuneRange" min="0" max="100" value="0" aria-label="Vocal tune strength" role="slider">
+            <input type="range" id="tuneRange" min="0" max="100" value="0" aria-label="Vocal tune strength">
           </div>
         </div>
       </div>
@@ -373,7 +369,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
     <button id="btnDemo" aria-label="Generate built-in demo track">DEMO</button>
     <button id="btnUndo" aria-label="Undo" disabled>↶</button>
     <button id="btnRedo" aria-label="Redo" disabled>↷</button>
-    <button id="btnExport" aria-label="Export 24-bit WAV" disabled>⤓ WAV 24</button>
+    <button id="btnExport" aria-label="Export 16-bit WAV" disabled>⤓ WAV 16</button>
     <button id="btnMp3" aria-label="Export MP3 320 kbps" disabled hidden>⤓ MP3 320</button>
     <div id="statusLine" class="mono" role="status" aria-live="polite">Ready.</div>
   </footer>
@@ -394,9 +390,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
 
 <script>
 "use strict";
-/* ═══════════════════════════════════════════════════════════════════════
-   © MG — LEGENDARIOUS ENGINE V3
-   ═══════════════════════════════════════════════════════════════════════ */
+/* © MG — LEGENDARIOUS ENGINE V3.2 FINAL */
 
 const MG_LOGO_SVG = `
 <svg viewBox="0 0 200 110" aria-hidden="true">
@@ -454,6 +448,9 @@ const STEM_KEYS = ['vocals','drums','bass','other'];
 
 let dirty = true;
 function markDirty(){ dirty = true; }
+
+/* Performance-tuned DPR cap — 1.25 instead of 2 */
+function dpCap(){ return Math.min(1.25, window.devicePixelRatio || 1); }
 
 const clamp = (v,min,max) => v<min?min:v>max?max:v;
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
@@ -939,71 +936,6 @@ function mixStems(stems, n, gains, duck, tune){
   return {L,R};
 }
 
-function lr4(data, sr, freq, type){
-  const Q = 0.7071;
-  bq(data, biquad(type, sr, freq, Q));
-  bq(data, biquad(type, sr, freq, Q));
-}
-
-function compressBand(data, sr, cfg){
-  const threshold = cfg.th ?? -20;
-  const ratio     = cfg.ratio ?? 3;
-  const attack    = cfg.attack ?? 0.010;
-  const release   = cfg.release ?? 0.12;
-  const makeup    = cfg.makeup ?? 0;
-  const knee      = cfg.knee ?? 6;
-  const atkCoef = Math.exp(-1/(attack*sr));
-  const relCoef = Math.exp(-1/(release*sr));
-  const slope   = 1 - 1/ratio;
-  const half    = knee/2;
-  let env = 0;
-  for(let i=0;i<data.length;i++){
-    const x = Math.abs(data[i]);
-    const coef = x > env ? atkCoef : relCoef;
-    env = x + coef*(env - x);
-    if(env > 1e-9){
-      const envDb = 20*Math.log10(env);
-      const over = envDb - threshold;
-      let reduced = 0;
-      if(over >= half) reduced = slope*over;
-      else if(over > -half){
-        const t = over + half;
-        reduced = slope*t*t/(2*knee);
-      }
-      if(reduced > 0) data[i] *= Math.pow(10, -reduced/20);
-    }
-  }
-  if(makeup){
-    const mk = Math.pow(10, makeup/20);
-    for(let i=0;i<data.length;i++) data[i] *= mk;
-  }
-}
-
-function multibandCompress(L, R, sr, mbOpts){
-  const n = L.length;
-  const lowX  = mbOpts.lowX  ?? 200;
-  const highX = mbOpts.highX ?? 2000;
-  const bands = mbOpts.bands;
-  const b0 = new Float32Array(n);
-  const b1 = new Float32Array(n);
-  const b2 = new Float32Array(n);
-  const runChannel = (chan, out) => {
-    b0.set(chan);
-    lr4(b0, sr, lowX, 'lp');
-    b1.set(chan);
-    lr4(b1, sr, lowX, 'hp');
-    lr4(b1, sr, highX, 'lp');
-    b2.set(chan);
-    lr4(b2, sr, highX, 'hp');
-    compressBand(b0, sr, bands[0]);
-    compressBand(b1, sr, bands[1]);
-    compressBand(b2, sr, bands[2]);
-    for(let i=0;i<n;i++) out[i] = b0[i] + b1[i] + b2[i];
-  };
-  runChannel(L, L);
-  runChannel(R, R);
-}
-
 function masterChain(L, R, sr, opts){
   const n = L.length;
   if(opts.tilt){
@@ -1028,8 +960,6 @@ function masterChain(L, R, sr, opts){
       L[i] = m+s; R[i] = m-s;
     }
   }
-  if(opts.mb && opts.mb.bands) multibandCompress(L, R, sr, opts.mb);
-
   const loud = measureLoudness([L,R], sr);
   const gain = Math.pow(10, (opts.target - loud.integrated)/20);
   let peak = 0;
@@ -1066,84 +996,25 @@ function masterChain(L, R, sr, opts){
   return out;
 }
 
-const MB_TIGER = {
-  lowX:200, highX:2000,
-  bands:[
-    {th:-14,ratio:4.0,attack:0.040,release:0.25},
-    {th:-20,ratio:3.0,attack:0.012,release:0.10},
-    {th:-26,ratio:2.5,attack:0.004,release:0.07}
-  ]
-};
-const MB_CLEAN = {
-  lowX:200, highX:2000,
-  bands:[
-    {th:-20,ratio:2.5,attack:0.030,release:0.20},
-    {th:-20,ratio:2.5,attack:0.015,release:0.12},
-    {th:-24,ratio:2.0,attack:0.005,release:0.08}
-  ]
-};
-const MB_LOFI = {
-  lowX:220, highX:2400,
-  bands:[
-    {th:-22,ratio:2.0,attack:0.050,release:0.30},
-    {th:-22,ratio:2.0,attack:0.020,release:0.15},
-    {th:-30,ratio:4.0,attack:0.003,release:0.06}
-  ]
-};
-const MB_PODCAST = {
-  lowX:180, highX:2500,
-  bands:[
-    {th:-30,ratio:2.0,attack:0.030,release:0.20},
-    {th:-16,ratio:3.5,attack:0.008,release:0.10},
-    {th:-26,ratio:2.0,attack:0.005,release:0.08}
-  ]
-};
-
 const PRESETS = {
-  tiger:     {target:-9,  dur:185,  widen:1.30, tilt:2.5, excite:1, duck:false, mb:MB_TIGER,   g:{vocals:1.05,drums:1.25,bass:1.35,other:0.95}},
-  clean:     {target:-14, dur:null, widen:1.06, tilt:0,   excite:0, duck:false, mb:MB_CLEAN,   g:{vocals:1,drums:1,bass:1,other:1}},
-  festival:  {target:-9,  dur:180,  widen:1.25, tilt:2,   excite:1, duck:false, mb:MB_TIGER,   g:{vocals:1.05,drums:1.15,bass:1.20,other:0.95}},
-  lofi:      {target:-16, dur:null, widen:0.90, tilt:-3,  excite:0, duck:false, mb:MB_LOFI,    g:{vocals:0.90,drums:0.90,bass:1.05,other:1.10}},
-  bollywood: {target:-13, dur:200,  widen:1.15, tilt:1,   excite:1, duck:false, mb:MB_CLEAN,   g:{vocals:1.15,drums:1.05,bass:1.0,other:1.0}},
-  drill:     {target:-11, dur:170,  widen:1.10, tilt:1.5, excite:1, duck:false, mb:MB_TIGER,   g:{vocals:0.95,drums:1.10,bass:1.30,other:0.90}},
-  cinematic: {target:-18, dur:210,  widen:1.40, tilt:-1,  excite:1, duck:false, mb:MB_LOFI,    g:{vocals:1.0,drums:0.95,bass:1.0,other:1.20}},
-  reel15:    {target:-14, dur:15,   widen:1.20, tilt:1.5, excite:1, duck:false, mb:MB_CLEAN,   g:{vocals:1.1,drums:1.15,bass:1.2,other:1.0}},
-  reel30:    {target:-14, dur:30,   widen:1.20, tilt:1.5, excite:1, duck:false, mb:MB_CLEAN,   g:{vocals:1.1,drums:1.15,bass:1.2,other:1.0}},
-  podcast:   {target:-16, dur:null, widen:1.0,  tilt:0.5, excite:0, duck:true,  mb:MB_PODCAST, g:{vocals:1.25,drums:0.85,bass:0.95,other:0.9}},
-  karaoke:   {target:-14, dur:null, widen:1.15, tilt:1,   excite:1, duck:false, mb:MB_CLEAN,   g:{vocals:0.04,drums:1.0,bass:1.0,other:1.05}}
+  tiger:     {target:-9,  dur:185,  widen:1.30, tilt:2.5, excite:1, duck:false, g:{vocals:1.05,drums:1.25,bass:1.35,other:0.95}},
+  clean:     {target:-14, dur:null, widen:1.06, tilt:0,   excite:0, duck:false, g:{vocals:1,drums:1,bass:1,other:1}},
+  festival:  {target:-9,  dur:180,  widen:1.25, tilt:2,   excite:1, duck:false, g:{vocals:1.05,drums:1.15,bass:1.20,other:0.95}},
+  lofi:      {target:-16, dur:null, widen:0.90, tilt:-3,  excite:0, duck:false, g:{vocals:0.90,drums:0.90,bass:1.05,other:1.10}},
+  bollywood: {target:-13, dur:200,  widen:1.15, tilt:1,   excite:1, duck:false, g:{vocals:1.15,drums:1.05,bass:1.0,other:1.0}},
+  drill:     {target:-11, dur:170,  widen:1.10, tilt:1.5, excite:1, duck:false, g:{vocals:0.95,drums:1.10,bass:1.30,other:0.90}},
+  cinematic: {target:-18, dur:210,  widen:1.40, tilt:-1,  excite:1, duck:false, g:{vocals:1.0,drums:0.95,bass:1.0,other:1.20}},
+  reel15:    {target:-14, dur:15,   widen:1.20, tilt:1.5, excite:1, duck:false, g:{vocals:1.1,drums:1.15,bass:1.2,other:1.0}},
+  reel30:    {target:-14, dur:30,   widen:1.20, tilt:1.5, excite:1, duck:false, g:{vocals:1.1,drums:1.15,bass:1.2,other:1.0}},
+  podcast:   {target:-16, dur:null, widen:1.0,  tilt:0.5, excite:0, duck:true,  g:{vocals:1.25,drums:0.85,bass:0.95,other:0.9}},
+  karaoke:   {target:-14, dur:null, widen:1.15, tilt:1,   excite:1, duck:false, g:{vocals:0.04,drums:1.0,bass:1.0,other:1.05}}
 };
 let SEED_RNG = mulberry32(Date.now() & 0xffffffff);
-
-function memUsedMB(){
-  if(performance.memory) return performance.memory.usedJSHeapSize / (1024*1024);
-  return 0;
-}
-function releaseStems(){
-  if(S.stems){
-    for(const k of STEM_KEYS){
-      if(S.stems[k]){ S.stems[k].L = null; S.stems[k].R = null; }
-    }
-    S.stems = null;
-  }
-}
-function checkMemory(){
-  const used = memUsedMB();
-  if(!used) return;
-  if(used > 1200){
-    releaseStems();
-    D.statusLine.textContent = `MEM ${used.toFixed(0)} MB · stems released`;
-  }
-  if(used > 1400){
-    S.analysis = null;
-    peaks = null;
-    D.statusLine.textContent = `MEM ${used.toFixed(0)} MB · analysis released`;
-  }
-}
 
 function getCtx(){
   if(!S.ctx){
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    S.ctx = new AudioContextClass({sampleRate:44100});
+    S.ctx = new AudioContextClass();
     S.gain = S.ctx.createGain();
     S.gain.gain.value = 1;
     S.analyser = S.ctx.createAnalyser();
@@ -1158,7 +1029,9 @@ function getCtx(){
 }
 
 async function generateDemo(){
-  const sr=44100, bpm=124, bars=24, beatsPerBar=4;
+  const ctx = getCtx();
+  const sr = ctx.sampleRate || 48000;
+  const bpm = 124, bars = 24, beatsPerBar = 4;
   const spb = 60/bpm;
   const dur = bars*beatsPerBar*spb + 2.2;
   const octx = new OfflineAudioContext(2, Math.ceil(sr*dur), sr);
@@ -1335,13 +1208,17 @@ async function runPipeline(){
       mixR = new Float32Array(arranged.numberOfChannels>1?arranged.getChannelData(1):arranged.getChannelData(0));
     }
     await sleep(20);
-    setProgress(80,'Mastering · 3-band MB · excite · LUFS · limiter…'); await sleep(35);
+    setProgress(80,'Mastering · EQ · LUFS · limiter…'); await sleep(35);
     const mastered = masterChain(mixL, mixR, sr, {
-      target, widen: P.widen, tilt: P.tilt, excite: P.excite, mb: P.mb
+      target, widen: P.widen, tilt: P.tilt, excite: P.excite
     });
     setProgress(94,'Finalising…'); await sleep(25);
-    releaseStems();
-    if(window.gc) window.gc();
+    if(S.stems){
+      for(const k of STEM_KEYS){
+        if(S.stems[k]){ S.stems[k].L = null; S.stems[k].R = null; }
+      }
+      S.stems = null;
+    }
     pushHistory();
     S.edited = mastered;
     S.playBuf = mastered;
@@ -1356,7 +1233,7 @@ async function runPipeline(){
     setProgress(100, `Done in ${((performance.now()-t0)/1000).toFixed(1)}s`);
     await sleep(350);
     hideProgress();
-    toast(`⚡ Legendarious V3 ready · ${fmtTime(mastered.duration)} · ${rl.integrated.toFixed(1)} LUFS`);
+    toast(`⚡ Legendarious V3.2 ready · ${fmtTime(mastered.duration)} · ${rl.integrated.toFixed(1)} LUFS`);
     celebrate();
     D.stripes.classList.remove('sweep'); void D.stripes.offsetWidth; D.stripes.classList.add('sweep');
     computePeaks(mastered);
@@ -1486,12 +1363,12 @@ esx.fillStyle = sg;
 esx.fillRect(0, 0, SPRITE_SIZE, SPRITE_SIZE);
 
 function resizeBG(){
-  bgDPR = Math.min(2, window.devicePixelRatio||1);
+  bgDPR = dpCap();
   bgW = bg.width = Math.floor(window.innerWidth * bgDPR);
   bgH = bg.height = Math.floor(window.innerHeight * bgDPR);
   bg.style.width = window.innerWidth + 'px';
   bg.style.height = window.innerHeight + 'px';
-  const target = S.silk ? 0 : Math.min(1400, Math.floor(window.innerWidth * window.innerHeight / 1600));
+  const target = S.silk ? 0 : Math.min(500, Math.floor(window.innerWidth * window.innerHeight / 3000));
   while(particles.length < target) particles.push(newParticle(true));
   if(particles.length > target) particles.length = target;
 }
@@ -1550,12 +1427,12 @@ function initVizPoints(n){
 }
 function resizeViz(){
   const r = viz.getBoundingClientRect();
-  vizDPR = Math.min(2, window.devicePixelRatio||1);
+  vizDPR = dpCap();
   vizW = viz.width = Math.max(80, Math.floor(r.width*vizDPR));
   vizH = viz.height = Math.max(80, Math.floor(r.height*vizDPR));
   viz.style.width = r.width+'px';
   viz.style.height = r.height+'px';
-  if(!vizPts.length) initVizPoints(S.silk ? 900 : 2400);
+  if(!vizPts.length) initVizPoints(S.silk ? 500 : 1200);
 }
 function drawViz(dt){
   if(!vizW) return;
@@ -1567,7 +1444,7 @@ function drawViz(dt){
   const cosR = Math.cos(vizRot), sinR = Math.sin(vizRot);
   const tilt = 0.30;
   const ct = Math.cos(tilt), st = Math.sin(tilt);
-  const pts = S.silk ? vizPts.slice(0, 700) : vizPts;
+  const pts = S.silk ? vizPts.slice(0, 400) : vizPts;
   vx.globalCompositeOperation = 'lighter';
   for(const p of pts){
     const x = p.x*cosR - p.z*sinR;
@@ -1599,7 +1476,7 @@ let waveW=0, waveH=0, waveDPR=1, peaks=null;
 let beatFlash = 0, chroma = 0;
 function resizeWave(){
   const r = D.waveWrap.getBoundingClientRect();
-  waveDPR = Math.min(2, window.devicePixelRatio||1);
+  waveDPR = dpCap();
   waveW = wc.width = Math.max(80, Math.floor(r.width*waveDPR));
   waveH = wc.height = Math.max(60, Math.floor(r.height*waveDPR));
   wc.style.width = r.width+'px';
@@ -1708,7 +1585,7 @@ const sc = D.spectrum, sx = sc.getContext('2d');
 let specW=0, specH=0, specDPR=1;
 function resizeSpec(){
   const r = sc.getBoundingClientRect();
-  specDPR = Math.min(2, window.devicePixelRatio||1);
+  specDPR = dpCap();
   specW = sc.width = Math.max(60, Math.floor(r.width*specDPR));
   specH = sc.height = Math.max(40, Math.floor(r.height*specDPR));
   sc.style.width = r.width+'px';
@@ -1716,12 +1593,9 @@ function resizeSpec(){
 }
 function drawSpec(){
   if(!specW) return;
+  if(!S.playing) return;
   sx.clearRect(0,0,specW,specH);
-  if(!S.analyser || !S.playing){
-    sx.strokeStyle = 'rgba(192,192,192,0.15)';
-    sx.beginPath(); sx.moveTo(0,specH-1); sx.lineTo(specW,specH-1); sx.stroke();
-    return;
-  }
+  if(!S.analyser) return;
   S.analyser.getByteFrequencyData(S.freqData);
   const bins = 96;
   const step = Math.floor(S.freqData.length/bins);
@@ -1767,22 +1641,20 @@ function roar(){
     eye.setAttribute('r','7'); eye.setAttribute('opacity','1');
     setTimeout(()=>{ eye.setAttribute('r','0'); eye.setAttribute('opacity','0'); }, 260);
   }
-  D.logoSocket.style.filter = 'drop-shadow(-3px 0 rgba(255,60,60,.7)) drop-shadow(3px 0 rgba(60,200,255,.7))';
-  setTimeout(()=>{ D.logoSocket.style.filter=''; }, 190);
 }
 
 const nova = D.nova, nx = nova.getContext('2d');
 let novaParts = [], novaActive = false;
 function resizeNova(){
-  nova.width = window.innerWidth;
-  nova.height = window.innerHeight;
+  nova.width = Math.floor(window.innerWidth * dpCap());
+  nova.height = Math.floor(window.innerHeight * dpCap());
   nova.style.width = window.innerWidth+'px';
   nova.style.height = window.innerHeight+'px';
 }
 function celebrate(){
   if(S.silk) return;
   novaParts = [];
-  for(let i=0;i<260;i++){
+  for(let i=0;i<180;i++){
     const a = Math.random()*Math.PI*2, sp = 2 + Math.random()*11;
     novaParts.push({
       x: window.innerWidth/2, y: window.innerHeight/2,
@@ -1827,10 +1699,10 @@ function encodeWAV(buf, bitDepth){
   const byteRate = sr*blockAlign;
   const info = [
     ['IART', 'MG'],
-    ['INAM', 'Legendarious Engine V3'],
+    ['INAM', 'Legendarious Engine V3.2'],
     ['ICMT', '© MG — produced with Tiger Beats Engine'],
     ['ICOP', '© MG. All Rights Reserved.'],
-    ['ISFT', 'MG Legendarious Engine V3']
+    ['ISFT', 'MG Legendarious Engine V3.2']
   ];
   let infoSize = 4;
   const infoChunks = info.map(([id,val])=>{
@@ -1876,20 +1748,34 @@ function encodeWAV(buf, bitDepth){
   }
   return new Blob([ab], {type:'audio/wav'});
 }
-function exportWAV(){
+
+async function exportWAV(){
   if(!S.edited){ toast('Run the pipeline first','err'); return; }
   try{
-    const blob = encodeWAV(S.edited, 24);
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const blob = encodeWAV(S.edited, 16);
     const stamp = new Date().toISOString().slice(0,19).replace(/[:T]/g,'-');
-    a.href = url;
-    a.download = `MG_LegendariousV3_${D.presetSel.value}_${stamp}.wav`;
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(()=>URL.revokeObjectURL(url), 4000);
-    toast('⤓ Exported · WAV 24-bit · tagged © MG');
+    const fname = `MG_LegendariousV3_${D.presetSel.value}_${stamp}.wav`;
+    let shared = false;
+    try {
+      if(typeof File !== 'undefined' && navigator.canShare){
+        const file = new File([blob], fname, { type: 'audio/wav' });
+        if(navigator.canShare({ files: [file] })){
+          await navigator.share({ files: [file], title: 'MG Legendarious Export' });
+          shared = true;
+        }
+      }
+    } catch (e) {
+      if(e && e.name === 'AbortError') shared = true;
+    }
+    if(!shared){
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = fname;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(url), 60000);
+    }
+    toast('⤓ Exported · WAV 16-bit · tagged © MG');
     celebrate();
-    setTimeout(downloadShareCard, 400);
   }catch(e){
     console.error(e);
     toast('Export failed — session preserved','err');
@@ -1942,76 +1828,32 @@ async function exportMP3(){
   try{
     toast('Encoding MP3 320…');
     const blob = await encodeMP3(S.edited, 320);
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
     const stamp = new Date().toISOString().slice(0,19).replace(/[:T]/g,'-');
-    a.href = url;
-    a.download = `MG_LegendariousV3_${D.presetSel.value}_${stamp}.mp3`;
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(()=>URL.revokeObjectURL(url), 4000);
-    toast('⤓ Exported · MP3 320 kbps · © MG');
+    const fname = `MG_LegendariousV3_${D.presetSel.value}_${stamp}.mp3`;
+    let shared = false;
+    try {
+      if(typeof File !== 'undefined' && navigator.canShare){
+        const file = new File([blob], fname, { type: 'audio/mpeg' });
+        if(navigator.canShare({ files: [file] })){
+          await navigator.share({ files: [file], title: 'MG Legendarious Export' });
+          shared = true;
+        }
+      }
+    } catch (e) {
+      if(e && e.name === 'AbortError') shared = true;
+    }
+    if(!shared){
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = fname;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(url), 60000);
+    }
+    toast('⤓ Exported · MP3 320 · © MG');
     celebrate();
   }catch(e){
     console.error(e);
     toast('MP3 encoder unavailable · use WAV','err');
-  }
-}
-
-function generateShareCard(){
-  const c = document.createElement('canvas');
-  c.width = 1200; c.height = 630;
-  const g = c.getContext('2d');
-  const bg = g.createLinearGradient(0,0,c.width,c.height);
-  bg.addColorStop(0, '#090A0C'); bg.addColorStop(0.5, '#101216'); bg.addColorStop(1, '#090A0C');
-  g.fillStyle = bg; g.fillRect(0,0,c.width,c.height);
-  const aur = g.createRadialGradient(c.width/2, c.height*0.4, 0, c.width/2, c.height*0.4, 640);
-  aur.addColorStop(0, 'rgba(255,215,0,0.24)');
-  aur.addColorStop(0.5, 'rgba(255,107,0,0.10)');
-  aur.addColorStop(1, 'rgba(0,0,0,0)');
-  g.fillStyle = aur; g.fillRect(0,0,c.width,c.height);
-  g.strokeStyle = '#FFD700'; g.lineWidth = 3;
-  g.beginPath();
-  g.moveTo(600, 40); g.lineTo(1120, 175); g.lineTo(1120, 380);
-  g.quadraticCurveTo(1120, 580, 600, 620);
-  g.quadraticCurveTo(80, 580, 80, 380);
-  g.lineTo(80, 175); g.closePath(); g.stroke();
-  g.textAlign = 'center';
-  g.font = '900 84px Cinzel, Georgia, serif';
-  const tg = g.createLinearGradient(200,0,1000,0);
-  tg.addColorStop(0, '#FFE873'); tg.addColorStop(0.5, '#FFD700'); tg.addColorStop(1, '#D4AF37');
-  g.fillStyle = tg;
-  g.fillText('LEGENDARIOUS', 600, 270);
-  g.font = '600 32px Inter, sans-serif';
-  g.fillStyle = '#C0C0C8';
-  g.fillText('MG × TIGER BEATS', 600, 330);
-  const bpm  = S.analysis ? S.analysis.bpm.toFixed(1) : '—';
-  const key  = S.analysis ? S.analysis.key.name : '—';
-  const dur  = S.edited ? fmtTime(S.edited.duration) : '—';
-  const seed = (D.presetSel.value || '').toUpperCase();
-  g.font = '700 24px "JetBrains Mono", monospace';
-  g.fillStyle = '#FFD700';
-  g.fillText(`BPM ${bpm}   ·   KEY ${key}   ·   DUR ${dur}`, 600, 420);
-  g.fillText(`SEED ${seed}   ·   ${D.lufsSel.value} LUFS`, 600, 460);
-  g.font = '700 18px Cinzel, Georgia, serif';
-  g.fillStyle = 'rgba(192,192,200,0.55)';
-  g.fillText('© MG · ALL RIGHTS RESERVED · LEGENDARIOUS ENGINE V3', 600, 590);
-  return c;
-}
-function downloadShareCard(){
-  try{
-    const c = generateShareCard();
-    c.toBlob(blob => {
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      const stamp = new Date().toISOString().slice(0,19).replace(/[:T]/g,'-');
-      a.href = url;
-      a.download = `MG_LegendariousV3_card_${stamp}.png`;
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(()=>URL.revokeObjectURL(url), 4000);
-    }, 'image/png');
-    toast('📸 Share card saved · © MG');
-  }catch(e){
-    console.warn('share card', e);
   }
 }
 
@@ -2054,9 +1896,6 @@ D.tuneRange.addEventListener('input', e => {
   D.tuneVal.textContent = S.tune;
 });
 
-/* ═══════════════════════════════════════════════════════════════════════
-   [V3] FILE LOADING — upload · URL · paste · drop
-   ═══════════════════════════════════════════════════════════════════════ */
 async function loadFile(file){
   if(!file) return;
   const ctx = getCtx();
@@ -2124,7 +1963,6 @@ function onAudioReady(buf, label){
   markDirty();
 }
 
-/* File picker triggers */
 function openFilePicker(){
   D.fileInput.value = '';
   D.fileInput.click();
@@ -2145,14 +1983,10 @@ D.dropHint.addEventListener('keydown', e => {
 D.waveWrap.addEventListener('click', e => {
   if(!S.playBuf){ openFilePicker(); }
 });
-
-/* URL loader */
 D.urlLoadBtn.addEventListener('click', () => loadURL(D.urlInput.value.trim()));
 D.urlInput.addEventListener('keydown', e => {
   if(e.key === 'Enter'){ e.preventDefault(); loadURL(D.urlInput.value.trim()); }
 });
-
-/* Waveform seek — must not fire when loading */
 D.waveWrap.addEventListener('pointerdown', e => {
   if(!S.playBuf) return;
   const r = D.waveWrap.getBoundingClientRect();
@@ -2160,7 +1994,6 @@ D.waveWrap.addEventListener('pointerdown', e => {
   seek(p * S.playBuf.duration);
 });
 
-/* Drag & drop — panel highlight */
 ['dragenter','dragover'].forEach(ev => {
   document.addEventListener(ev, e => { e.preventDefault(); D.wavePanel.classList.add('drag'); });
 });
@@ -2174,7 +2007,6 @@ document.addEventListener('drop', async e => {
   if(files.length) loadFile(files[0]);
 });
 
-/* Clipboard paste */
 document.addEventListener('paste', async e => {
   const items = e.clipboardData?.items || [];
   for(const it of items){
@@ -2267,9 +2099,6 @@ D.presetSel.addEventListener('change', () => {
 D.lufsSel.addEventListener('change', () => toast('LUFS target · ' + D.lufsSel.value));
 D.stemSel.addEventListener('change', () => toast('Stem mode · ' + D.stemSel.options[D.stemSel.selectedIndex].text));
 D.logoSocket.addEventListener('click', roar);
-D.logoSocket.addEventListener('keydown', e => {
-  if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); roar(); }
-});
 
 let scrubbing = false;
 const scrubTo = e => {
@@ -2280,50 +2109,22 @@ const scrubTo = e => {
 D.progressWrap.addEventListener('pointerdown', e => { scrubbing = true; D.progressWrap.setPointerCapture(e.pointerId); scrubTo(e); });
 D.progressWrap.addEventListener('pointermove', e => { if(scrubbing) scrubTo(e); });
 D.progressWrap.addEventListener('pointerup', () => { scrubbing = false; });
-D.progressWrap.addEventListener('keydown', e => {
-  if(!S.playBuf) return;
-  if(e.key === 'ArrowRight'){ seek(getPos()+5); e.preventDefault(); }
-  if(e.key === 'ArrowLeft'){ seek(getPos()-5); e.preventDefault(); }
-});
 
 document.addEventListener('keydown', e => {
   if(e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
   switch(e.key.toLowerCase()){
     case ' ': e.preventDefault(); if(S.playBuf) play(); break;
-    case 'arrowright': if(S.playBuf) seek(getPos()+5); e.preventDefault(); break;
-    case 'arrowleft': if(S.playBuf) seek(getPos()-5); e.preventDefault(); break;
     case 'e': if(!S.original) D.btnDemo.click(); else exportWAV(); break;
-    case 'o':
-      if(e.ctrlKey || e.metaKey){ e.preventDefault(); openFilePicker(); }
-      break;
     case 's': S.gains.vocals = S.gains.vocals>0.001 ? 0 : 1; syncFaders(); break;
     case 'm': S.duck = !S.duck; syncDuckUI(); break;
-    case 'z':
-      if(e.ctrlKey || e.metaKey){ e.preventDefault(); if(e.shiftKey) D.btnRedo.click(); else D.btnUndo.click(); }
-      break;
-    case 'y':
-      if(e.ctrlKey || e.metaKey){ e.preventDefault(); D.btnRedo.click(); }
-      break;
-    case 'enter':
-      if(e.ctrlKey || e.metaKey){ e.preventDefault(); runPipeline(); }
+    case 'o':
+      if(e.ctrlKey || e.metaKey){ e.preventDefault(); openFilePicker(); }
       break;
   }
 });
 
-let mx = 0.5, my = 0.5, tmx = 0.5, tmy = 0.5;
-document.addEventListener('pointermove', e => {
-  tmx = e.clientX/window.innerWidth;
-  tmy = e.clientY/window.innerHeight;
-  document.querySelectorAll('.glass').forEach(p => {
-    const r = p.getBoundingClientRect();
-    p.style.setProperty('--mx', (((e.clientX-r.left)/r.width)*100)+'%');
-    p.style.setProperty('--my', (((e.clientY-r.top)/r.height)*100)+'%');
-  });
-}, {passive:true});
-
 let lastT = performance.now();
 let meterAcc = 0;
-let memAcc = 0;
 
 function loop(t){
   const dt = Math.min(64, t - lastT);
@@ -2334,7 +2135,7 @@ function loop(t){
     S.fps = 1000/(S.fpsAcc/S.fpsFrames);
     S.fpsAcc = 0; S.fpsFrames = 0;
     D.fpsLabel.textContent = Math.round(S.fps)+' FPS';
-    if(!S.silk && S.fps < 48){
+    if(!S.silk && S.fps < 55){
       if(!S.lowFpsSince) S.lowFpsSince = t;
       else if(t - S.lowFpsSince > 2000){
         S.silk = true;
@@ -2342,12 +2143,8 @@ function loop(t){
         resizeBG();
         toast('Silk Mode engaged · performance guard');
       }
-    } else if(S.fps >= 52){ S.lowFpsSince = 0; }
+    } else if(S.fps >= 58){ S.lowFpsSince = 0; }
   }
-  mx += (tmx-mx)*0.06;
-  my += (tmy-my)*0.06;
-  D.waveWrap.style.transform = `translate3d(${(mx-0.5)*3}px, ${(my-0.5)*2}px, 0)`;
-  D.viz.style.transform = `translate3d(${(mx-0.5)*-5}px, ${(my-0.5)*-3}px, 0)`;
   if(S.playing && S.analyser){
     S.analyser.getByteTimeDomainData(S.timeData);
     let sum = 0;
@@ -2379,9 +2176,7 @@ function loop(t){
   drawNova();
   if(S.playing) updateProgressUI();
   meterAcc += dt;
-  if(meterAcc > 50){ meterAcc = 0; updateMeters(); }
-  memAcc += dt;
-  if(memAcc > 1000){ memAcc = 0; checkMemory(); }
+  if(meterAcc > 120){ meterAcc = 0; updateMeters(); }
 }
 
 function updateMeters(){
@@ -2450,8 +2245,7 @@ function boot(){
       }catch(e){ console.warn('demo', e); }
     }
   }, 1400);
-  console.log('%c© MG — LEGENDARIOUS ENGINE V3', 'color:#FFD700;font-weight:700;font-size:14px');
-  console.log('%cAll rights reserved. World-wide. Perpetual.', 'color:#C0C0C0');
+  console.log('%c© MG — LEGENDARIOUS ENGINE V3.2 FINAL', 'color:#FFD700;font-weight:700;font-size:14px');
 }
 if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
 else boot();
