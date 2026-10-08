@@ -1,0 +1,96 @@
+# MG Legendarious Engine — .gitignore
+
+# Audio / video test files
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.ogg
+*.oga
+*.opus
+*.flac
+*.webm
+*.mp4
+*.mov
+*.mkv
+*.aiff
+*.wma
+
+# Editor exports
+MG_Legendarious*
+mastered.wav
+mastered.mp3
+separated/
+stems/
+output/
+mg_engine_output/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.eggs/
+*.so
+.pytest_cache/
+
+# Colab / Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+secrets.json
+config.local.*
+*.key
+*.pem
+credentials.json
+
+# OS junk
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Android / Termux
+.termux/
+*.log
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Node (future tooling)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Misc
+*.tmp
+*.bak
+*.orig
+.cache/
+tmp/
+temp/
